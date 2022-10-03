@@ -1,8 +1,14 @@
 function clickEvent() {
+  const fields = {
+    hypotenuse: document.getElementById("hypotenuse"),
+    opposite: document.getElementById("opposite"),
+    adjacent: document.getElementById("adjacent"),
+  };
+
   const data = {
-    hypotenuse: document.getElementById("hypotenuse").value || 0,
-    opposite: document.getElementById("opposite").value || 0,
-    adjacent: document.getElementById("adjacent").value || 0,
+    hypotenuse: fields.hypotenuse.value || 0,
+    opposite: fields.opposite.value || 0,
+    adjacent: fields.adjacent.value || 0,
   };
 
   fetch("http://127.0.0.1:8000/", {
@@ -13,12 +19,13 @@ function clickEvent() {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      const currentParagraph = document.getElementById("message");
-      currentParagraph.textContent = data;
+    .then((responseData) => {
+      console.log(responseData);
+      if (!data.hypotenuse) fields.hypotenuse.value = responseData;
+      if (!data.opposite) fields.opposite.value = responseData;
+      if (!data.adjacent) fields.adjacent.value = responseData;
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      alert("Invalid values!");
     });
 }
