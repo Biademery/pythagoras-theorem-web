@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Ubuntu', 'sans-serif'; 
+}
+
+h1 {
+    text-align: center;
+    padding: 40px 0 40px;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#section {
+    width: 100%;
+}
+
+#formula {
+    width: fit-content;
+    border: 2px solid rgb(17, 199, 99);  
+    border-radius: 10px;
+    margin-left: 520px;  
+    padding: 10px;
+}
+
+#description {
+    padding: 0 20px 30px;
+}
+
+#half {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+}
+
+#half img {
+    width: 300px;
+    margin-top: 90px;
+
+}
+
+#half h3 {
+    padding: 10px 0 10px ;
+}
+
+#half p {
+    padding: 10px 0 ;
+
+}
+
+#image {
+    width: 50%;
+}
+
+#calculator {
+    width: 50%;
+    text-align: center;
+    margin-top: 60px;
+    margin-right: 20px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 20px;
+}
+
+input {
+    border-radius: 3px;
+}
+
+#calculator p {
+    padding: 0 0 20px;
+}
+
+.co {
+    margin-left: -32px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ca {
+    margin-left: -50px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: rgb(17, 199, 99);
+    border: rgb(17, 199, 99);
+    border-style: outset;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

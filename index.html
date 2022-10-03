@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Caculadora do Pitágoras</title>
+
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/128/3626/3626508.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>CALCULADORA DO TEOREMA DE PITÁGORAS</h1>
+    <div id="section">
+      <p id="description">
+        Em qualquer triângulo retângulo, o quadrado do comprimento da hipotenusa é igual à soma dos
+        quadrados dos comprimentos dos catetos. Esta calculadora resolve o Teorema de Pitágoras para
+        os lados (catetos) , ou a hipotenusa. A hipotenusa é o lado do triângulo oposto ao
+        ângulo reto(90°).
+      </p>
+      <h3 id="formula">Fórmula: h² = co² + ca²</h3>
+    <div id="half">
+      <div id="image">
+        <img
+          src="https://sabermatematica.com.br/wp-content/uploads/2016/09/seno-cosseno-tangente.png"
+          alt="Imagem de um triângulo retângulo"
+        />
+      </div>
+      <div id="calculator">
+        <h3>Calculadora</h3>
+        <p>Digite 2 valores e deixe um em branco para calcular:</p>
+
+        <div id="form">
+          <div class="hypotenuse">
+            <label for="hypotenuse">Hipotenusa (h):</label>
+            <input type="number" id="hypotenuse" placeholder="Valor de h" />
+          </div>
+          <div class="opposite">
+            <label for="opposite">Cateto Oposto (co):</label>
+            <input type="number" id="opposite" placeholder="Valor de co" />
+          </div>
+          <div class="adjacent">
+            <label for="adjacent">Cateto Adjacente (ca):</label>
+            <input type="number" id="adjacent" placeholder="Valor de ca" />
+          </div>
+          <p id="message"></p>
+        </div>
+
+        <button onclick="clickEvent()" type="button">Calcular</button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
