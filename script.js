@@ -11,7 +11,7 @@ function clickEvent() {
     adjacent: fields.adjacent.value || 0,
   };
 
-  fetch("http://127.0.0.1:8000/", {
+  fetch("https://pythagoras-theorem.herokuapp.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
