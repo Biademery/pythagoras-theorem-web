@@ -12,6 +12,7 @@ function clickEvent() {
   };
 
   fetch('https://pythagoras-theorem-api-biademery.vercel.app/', {
+    mode: 'no-cors',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
