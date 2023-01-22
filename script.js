@@ -1,4 +1,8 @@
-function clickEvent() {
+const button = document.querySelector('button');
+
+button.addEventListener('click', event => {
+  event.preventDefault();
+
   const fields = {
     hypotenuse: document.getElementById('hypotenuse'),
     opposite: document.getElementById('opposite'),
@@ -11,7 +15,7 @@ function clickEvent() {
     adjacent: fields.adjacent.value || 0,
   };
 
-  fetch('https://pythagoras-theorem-api-biademery.vercel.app/', {
+  fetch('http://127.0.0.1:8000/', {
     mode: 'no-cors',
     method: 'POST',
     headers: {
@@ -29,4 +33,4 @@ function clickEvent() {
     .catch(() => {
       alert('Invalid values!');
     });
-}
+});
