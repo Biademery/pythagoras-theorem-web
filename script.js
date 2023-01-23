@@ -23,14 +23,17 @@ button.addEventListener('click', event => {
     },
     body: JSON.stringify(data),
   })
-    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      response.json();
+    })
     .then(responseData => {
       console.log(responseData);
       if (!data.hypotenuse) fields.hypotenuse.value = responseData;
       if (!data.opposite) fields.opposite.value = responseData;
       if (!data.adjacent) fields.adjacent.value = responseData;
-    })
-    .catch(() => {
-      alert('Invalid values!');
     });
+  // .catch(() => {
+  //   alert('Invalid values!');
+  // });
 });
