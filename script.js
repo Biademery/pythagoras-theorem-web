@@ -15,7 +15,7 @@ button.addEventListener('click', event => {
     adjacent: fields.adjacent.value || 0,
   };
 
-  fetch('http://127.0.0.1:8000/', {
+  fetch('https://aqueous-river-66079.herokuapp.com/', {
     mode: 'no-cors',
     method: 'POST',
     headers: {
