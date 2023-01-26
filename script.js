@@ -1,8 +1,17 @@
 const button = document.querySelector('button');
-const loader = document.querySelector('.load');
+const loader = document.querySelector('.loader');
+
+const displaLoading = () => {
+  loader.classList.add('display');
+};
+
+const hideLoading = () => {
+  loader.classList.remove('display');
+};
 
 button.addEventListener('click', event => {
   event.preventDefault();
+  displaLoading();
 
   const fields = {
     hypotenuse: document.getElementById('hypotenuse'),
@@ -15,7 +24,6 @@ button.addEventListener('click', event => {
     opposite: fields.opposite.value || 0,
     adjacent: fields.adjacent.value || 0,
   };
-
   fetch('https://aqueous-river-66079.herokuapp.com/', {
     method: 'POST',
     headers: {
@@ -25,6 +33,7 @@ button.addEventListener('click', event => {
   })
     .then(response => response.json())
     .then(responseData => {
+      hideLoading();
       if (!data.hypotenuse) fields.hypotenuse.value = responseData;
       if (!data.opposite) fields.opposite.value = responseData;
       if (!data.adjacent) fields.adjacent.value = responseData;
@@ -33,11 +42,11 @@ button.addEventListener('click', event => {
       alert('Invalid values!');
     });
 
-  setTimeout(() => {
-    loader.style.display = 'flex';
-  }, 0);
+  // setTimeout(() => {
+  //   loader.style.display = 'flex';
+  // }, 0);
 
-  setTimeout(() => {
-    loader.style.display = 'none';
-  }, 300);
+  // setTimeout(() => {
+  //   loader.style.display = 'none';
+  // }, 300);
 });
