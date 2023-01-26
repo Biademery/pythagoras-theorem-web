@@ -39,5 +39,5 @@ button.addEventListener('click', event => {
 
   setTimeout(() => {
     loader.style.display = 'none';
-  }, 200);
+  }, 300);
 });
