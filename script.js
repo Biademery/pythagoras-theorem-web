@@ -1,4 +1,5 @@
 const button = document.querySelector('button');
+const loader = document.querySelector('.load');
 
 button.addEventListener('click', event => {
   event.preventDefault();
@@ -31,4 +32,12 @@ button.addEventListener('click', event => {
     .catch(() => {
       alert('Invalid values!');
     });
+
+  setTimeout(() => {
+    loader.style.display = 'flex';
+  }, 0);
+
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 200);
 });
