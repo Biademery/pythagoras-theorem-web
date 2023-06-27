@@ -24,7 +24,7 @@ button.addEventListener('click', event => {
     opposite: fields.opposite.value || 0,
     adjacent: fields.adjacent.value || 0,
   };
-  fetch('https://aqueous-river-66079.herokuapp.com/', {
+  fetch('https://agile-eyrie-19813-815761f3b93b.herokuapp.com/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -41,12 +41,4 @@ button.addEventListener('click', event => {
     .catch(() => {
       alert('Invalid values!');
     });
-
-  // setTimeout(() => {
-  //   loader.style.display = 'flex';
-  // }, 0);
-
-  // setTimeout(() => {
-  //   loader.style.display = 'none';
-  // }, 300);
 });
