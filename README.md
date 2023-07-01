@@ -16,7 +16,7 @@
   </a>
 </p>
 
-<img src="./pythagoras-theorem.png">
+<img src="./assets/pythagoras-theorem.png">
 
 ## 💻 Projeto
 
