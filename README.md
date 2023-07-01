@@ -16,6 +16,8 @@
   </a>
 </p>
 
+<img src="./pythagoras-theorem.png">
+
 ## 💻 Projeto
 
 Teorema de pitágoras web é o front-end de uma aplicação para calcular os lados de um triângulo retângulo.
