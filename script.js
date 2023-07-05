@@ -1,17 +1,17 @@
 const button = document.querySelector('button');
-const loader = document.querySelector('.loader');
+// const loader = document.querySelector('.loader');
 
-const displaLoading = () => {
-  loader.classList.add('display');
-};
+// const displayLoading = () => {
+//   loader.classList.add('display');
+// };
 
-const hideLoading = () => {
-  loader.classList.remove('display');
-};
+// const hideLoading = () => {
+//   loader.classList.remove('display');
+// };
 
 button.addEventListener('click', event => {
   event.preventDefault();
-  displaLoading();
+  // displayLoading();
 
   const fields = {
     hypotenuse: document.getElementById('hypotenuse'),
@@ -20,26 +20,28 @@ button.addEventListener('click', event => {
   };
 
   const data = {
-    hypotenuse: fields.hypotenuse.value || 0,
-    opposite: fields.opposite.value || 0,
-    adjacent: fields.adjacent.value || 0,
+    hypotenuse: parseFloat(fields.hypotenuse.value) || 0,
+    opposite: parseFloat(fields.opposite.value) || 0,
+    adjacent: parseFloat(fields.adjacent.value) || 0,
   };
-  // api está desabilitada no momento
-  fetch('https://agile-eyrie-19813-815761f3b93b.herokuapp.com/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-    .then(response => response.json())
-    .then(responseData => {
-      hideLoading();
-      if (!data.hypotenuse) fields.hypotenuse.value = responseData;
-      if (!data.opposite) fields.opposite.value = responseData;
-      if (!data.adjacent) fields.adjacent.value = responseData;
-    })
-    .catch(() => {
-      alert('Invalid values!');
-    });
+
+  let result = '';
+
+  if (!data.hypotenuse && data.opposite && data.adjacent) {
+    result = Math.sqrt((data.opposite ** 2) + (data.adjacent ** 2)).toFixed(2);
+  } else if (!data.opposite && data.hypotenuse && data.adjacent) {
+    result = Math.sqrt((data.hypotenuse ** 2) - (data.adjacent ** 2)).toFixed(2);
+  } else if (!data.adjacent && data.hypotenuse && data.opposite) {
+    result = Math.sqrt((data.hypotenuse ** 2) - (data.opposite ** 2)).toFixed(2);
+  } else {
+    alert('Invalid values!');
+    hideLoading();
+    return;
+  }
+
+  // hideLoading();
+
+  if (!data.hypotenuse) fields.hypotenuse.value = result;
+  if (!data.opposite) fields.opposite.value = result;
+  if (!data.adjacent) fields.adjacent.value = result;
 });
